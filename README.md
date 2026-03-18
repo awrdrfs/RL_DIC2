@@ -1,11 +1,35 @@
----
-title: RL DIC2
-emoji: 🏆
-colorFrom: pink
-colorTo: blue
-sdk: docker
-pinned: false
-short_description: a homework
----
+# Grid World 價值迭代可視化 (DIC2)
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+這是一個基於 Flask 的互動式網格地圖應用程式，旨在展示強化學習中的「價值迭代 (Value Iteration)」算法如何推導出最佳政策。
+
+## 功能特點
+- **5x5 互動網格**：用戶可以自定義起點、終點與障礙物。
+- **價值迭代算法**：實時計算每個狀態的期望回報 $V(s)$。
+- **最佳政策可視化**：使用箭頭顯示每個格子的最佳行動，並根據方向精確偏移以避免遮擋數值。
+- **動態路徑追蹤**：按下「自動執行至收斂」後，系統會自動高亮（黃色邊框）一條從起點到終點的最佳路徑。
+- **現代化介面**：採用深色主題、流暢動畫與直觀的控制面板。
+
+## 技術棧
+- **後端**：Python, Flask, NumPy
+- **前端**：HTML5, CSS3 (Vanilla CSS), JavaScript
+
+## <span style="color:red">安裝</span> 與執行
+1. 確保已 <span style="color:red">安裝</span> Python 3.x。
+2. <span style="color:red">安裝</span> 必要套件：
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. 執行應用程式：
+   ```bash
+   python app.py
+   ```
+4. 在瀏覽器中訪問 `http://127.0.0.1:5000`。
+
+## 使用說明
+1. **地圖設定**：使用左側面板切換模式（障礙物、起點、終點），然後點擊網格進行設置。
+2. **手動迭代**：點擊「執行一次迭代」觀察價值函數 $V(s)$ 的傳遞過程。
+3. **一鍵收斂**：點擊「自動執行至收斂」觀看算法自動運行，完成後會自動標示出最佳路徑。
+4. **重置**：隨時可以點擊「重置數值」來將所有狀態價值清零。
+
+## 守則說明
+本專案開發過程中嚴格遵守相關守則，包含繁體中文要求、特定的顏色標記規範，以及確保支援 Hugging Face 部署環境。
